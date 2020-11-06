@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "932646936374",
+    "firebase_url": "https://lifeline-9bf5b.firebaseio.com",
+    "project_id": "lifeline-9bf5b",
+    "storage_bucket": "lifeline-9bf5b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932646936374:android:530568a1f3cf72b4111d97",
+        "android_client_info": {
+          "package_name": "com.example.hackcbs30"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932646936374-9p67momkn5kn8ic14kahnfci9edp64nj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJU3lPqtmfef941ShnAE54mpkCQhHewGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932646936374-9p67momkn5kn8ic14kahnfci9edp64nj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
