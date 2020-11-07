@@ -10,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.google.android.material.button.MaterialButton;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -23,6 +25,7 @@ public class register extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     bloodgroupAdapter adapter;
+    private MaterialButton btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +33,7 @@ public class register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         gender = findViewById(R.id.gender_spinner);
-
+        btnRegister=findViewById(R.id.btnRegister);
 
         recyclerView= findViewById(R.id.recycler_wall);
         layoutManager = new GridLayoutManager(this, 4);

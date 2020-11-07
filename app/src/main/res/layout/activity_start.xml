@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".StartActivity"
     android:id="@+id/drawer"
     tools:openDrawer="start">
 
@@ -19,7 +19,9 @@
             android:id="@+id/toolbar"
             android:elevation="4dp"
             android:background="@color/colorPrimary"
-            />
+            >
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
         <FrameLayout
             android:layout_width="match_parent"

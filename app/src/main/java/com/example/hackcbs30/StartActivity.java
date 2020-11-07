@@ -72,6 +72,8 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
+
+
         FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container,new MainFragment());
         transaction.commit();
