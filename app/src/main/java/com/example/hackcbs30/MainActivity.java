@@ -3,7 +3,9 @@ package com.example.hackcbs30;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -110,8 +112,12 @@ public class MainActivity extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 if(!dataSnapshot.exists()){
                                     Map<String, Object> userMap = new HashMap<>();
+
                                     userMap.put("phone", user.getPhoneNumber());
-                                    userMap.put("name", user.getPhoneNumber());
+                                    userMap.put("name", user.getDisplayName());
+                                    userMap.put("age", "22");
+                                    userMap.put("gender", "M");
+                                    userMap.put("bloodGroup", "O-");
                                     mUserDB.updateChildren(userMap);
                                 }
                                 userIsLoggedIn();
@@ -147,5 +153,10 @@ public class MainActivity extends AppCompatActivity {
                 this,
                 mCallbacks);
 
+    }
+    private void getPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(new String[]{Manifest.permission.WRITE_CONTACTS, Manifest.permission.READ_CONTACTS}, 1);
+        }
     }
 }
