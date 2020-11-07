@@ -49,6 +49,12 @@ public class StartActivity extends AppCompatActivity {
                                 finish();
                         break;
 
+                    case R.id.contacts:
+
+                        
+
+                        break;
+
                     default:
                         break;
                 }

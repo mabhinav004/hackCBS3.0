@@ -11,10 +11,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
@@ -33,8 +35,9 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView mSend;
     private EditText mPhoneNumber, mCode;
-    private Button mSend;
+    private MaterialCardView cardViewLogin;
 
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
 
@@ -53,9 +56,10 @@ public class MainActivity extends AppCompatActivity {
         mPhoneNumber = findViewById(R.id.MobileNumber);
         mCode = findViewById(R.id.OTP);
 
-        mSend = findViewById(R.id.Login);
+        mSend = findViewById(R.id.txtLogin);
+        cardViewLogin=findViewById(R.id.Login);
 
-        mSend.setOnClickListener(new View.OnClickListener() {
+        cardViewLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(mVerificationId != null)
