@@ -23,15 +23,14 @@
             >
 
             <TextView
+                android:id="@+id/txtPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="9946545454"
-                android:id="@+id/txtPhone"
-                android:textStyle="bold|italic"
-                android:textColor="#FFFFFF"
                 android:layout_centerInParent="true"
+                android:text="9946545454"
+                android:textColor="#FFFFFF"
                 android:textSize="28sp"
-                />
+                android:textStyle="bold|italic" />
 
         </RelativeLayout>
 

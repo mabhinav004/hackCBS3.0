@@ -11,8 +11,11 @@ public class UserObject {
         this.name = name;
         this.age = age;
         this.number = number;
-        BloodGroup = bloodGroup;
-        Gender = gender;
+        this.BloodGroup = bloodGroup;
+        this.Gender = gender;
+    }
+    public UserObject(String number){
+        this.number=number;
     }
 
     public void setName(String name) {
@@ -33,9 +36,6 @@ public class UserObject {
 
     public void setGender(String gender) {
         Gender = gender;
-    }
-
-    public UserObject(String s, String name, String phone) {
     }
 
     public String getName() {

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -46,6 +47,7 @@ public class register extends AppCompatActivity {
         ArrayList<String> arrayList1 = new ArrayList<>(Arrays.asList(genders));
         ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<>(this, R.layout.gender_dummy, arrayList1);
         gender.setAdapter(arrayAdapter1);
+
 
     }
 }
