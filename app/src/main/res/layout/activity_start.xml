@@ -26,9 +26,22 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/toolbar"
             android:id="@+id/container"
-            />
+            >
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/register"
+                android:text="reg open"/>
+        </FrameLayout>
+
+
 
     </RelativeLayout>
+
+
+
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"

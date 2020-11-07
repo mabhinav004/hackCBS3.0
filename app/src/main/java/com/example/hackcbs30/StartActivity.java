@@ -22,6 +22,7 @@ public class StartActivity extends AppCompatActivity {
     private DrawerLayout drawer;
     private NavigationView navigationView;
     private MaterialToolbar toolbar;
+    Button reg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,15 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
 
         initViews();
+
+        reg=findViewById(R.id.register);
+
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), register.class));
+            }
+        });
 
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawer,toolbar,
