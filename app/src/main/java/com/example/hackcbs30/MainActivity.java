@@ -3,16 +3,20 @@ package com.example.hackcbs30;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
@@ -31,8 +35,9 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView mSend;
     private EditText mPhoneNumber, mCode;
-    private Button mSend;
+    private MaterialCardView cardViewLogin;
 
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
 
@@ -51,9 +56,10 @@ public class MainActivity extends AppCompatActivity {
         mPhoneNumber = findViewById(R.id.MobileNumber);
         mCode = findViewById(R.id.OTP);
 
-        mSend = findViewById(R.id.Login);
+        mSend = findViewById(R.id.txtLogin);
+        cardViewLogin=findViewById(R.id.Login);
 
-        mSend.setOnClickListener(new View.OnClickListener() {
+        cardViewLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(mVerificationId != null)
@@ -106,8 +112,12 @@ public class MainActivity extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 if(!dataSnapshot.exists()){
                                     Map<String, Object> userMap = new HashMap<>();
+
                                     userMap.put("phone", user.getPhoneNumber());
-                                    userMap.put("name", user.getPhoneNumber());
+                                    userMap.put("name", user.getDisplayName());
+                                    userMap.put("age", "22");
+                                    userMap.put("gender", "M");
+                                    userMap.put("bloodGroup", "O-");
                                     mUserDB.updateChildren(userMap);
                                 }
                                 userIsLoggedIn();
@@ -143,5 +153,10 @@ public class MainActivity extends AppCompatActivity {
                 this,
                 mCallbacks);
 
+    }
+    private void getPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(new String[]{Manifest.permission.WRITE_CONTACTS, Manifest.permission.READ_CONTACTS}, 1);
+        }
     }
 }

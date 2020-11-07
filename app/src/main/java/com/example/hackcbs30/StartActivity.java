@@ -28,6 +28,7 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+
         initViews();
 
         reg=findViewById(R.id.register);
@@ -56,6 +57,12 @@ public class StartActivity extends AppCompatActivity {
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                                 finish();
+                        break;
+
+                    case R.id.contacts:
+
+                        
+
                         break;
 
                     default:
