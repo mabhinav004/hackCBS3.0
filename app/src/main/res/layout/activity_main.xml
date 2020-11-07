@@ -1,45 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/spl_blood">
 
-    <EditText
-        android:id="@+id/MobileNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="204dp"
-        android:ems="10"
-        android:hint="Mobile number"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/blood_donate_image"
+        />
 
-    <EditText
-        android:id="@+id/OTP"
-        android:layout_width="wrap_content"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:ems="10"
-        android:hint="OTP"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MobileNumber" />
+        app:cardElevation="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/mainCardview"
+        >
 
-    <Button
-        android:id="@+id/Login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="71dp"
-        android:text="Login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/OTP" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:textStyle="bold"
+                    android:id="@+id/txtLoginView"
+                    android:textSize="32sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_centerHorizontal="true"
+                    />
+
+            </RelativeLayout>
+
+
+
+            <EditText
+                android:id="@+id/MobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:hint="Mobile number"
+                android:layout_marginTop="20dp"
+                android:inputType="textPersonName"
+                 />
+
+            <EditText
+                android:id="@+id/OTP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:hint="OTP"
+                android:inputType="textPersonName"
+                 />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="120dp"
+                    android:layout_height="44dp"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/Login"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimary">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Login"
+                            android:id="@+id/txtLogin"
+                            android:textColor="#FFFFFF"
+                            android:layout_centerInParent="true"
+                            android:textAllCaps="false"
+                            android:textSize="20sp"
+
+                            />
+
+
+                    </RelativeLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/mainCardview"
+         android:text="Don't have an account?LOGIN"
+         android:layout_marginTop="80dp"
+         android:layout_centerHorizontal="true"
+         android:textColor="#FFFFFF"
+         android:textStyle="italic"
+         android:textSize="15dp"
+         />
+
+</RelativeLayout>

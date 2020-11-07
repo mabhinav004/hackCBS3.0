@@ -2,6 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:title="My Contacts"
+        android:id="@+id/contacts"
+        android:icon="@drawable/ic_action_contacts"
+        />
+
+    <item
         android:title="Logout"
         android:id="@+id/logout"
         android:icon="@drawable/ic_action_logout"

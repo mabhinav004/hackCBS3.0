@@ -13,7 +13,8 @@
         <activity android:name=".StartActivity"
             android:theme="@style/AppTheme1"></activity>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
