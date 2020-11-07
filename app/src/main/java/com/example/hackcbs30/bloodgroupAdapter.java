@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class bloodgroupAdapter extends RecyclerView.Adapter<bloodgroupAdapter.MyViewHolder>{
@@ -30,6 +31,13 @@ public class bloodgroupAdapter extends RecyclerView.Adapter<bloodgroupAdapter.My
         String type=data[position];
         holder.textView.setText(type);
 
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
 
     }
 
@@ -41,10 +49,12 @@ public class bloodgroupAdapter extends RecyclerView.Adapter<bloodgroupAdapter.My
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView textView;
+        private CardView cardView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             textView =itemView.findViewById(R.id.blood_type);
+            cardView=itemView.findViewById(R.id.blood_group_cardview);
         }
     }
 }
