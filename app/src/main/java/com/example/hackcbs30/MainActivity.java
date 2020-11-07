@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         FirebaseApp.initializeApp(this);
 
         userIsLoggedIn();
@@ -141,5 +142,6 @@ public class MainActivity extends AppCompatActivity {
                 TimeUnit.SECONDS,
                 this,
                 mCallbacks);
+
     }
 }
