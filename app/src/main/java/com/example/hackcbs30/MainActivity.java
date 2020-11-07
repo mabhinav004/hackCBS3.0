@@ -28,6 +28,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
@@ -114,13 +115,14 @@ public class MainActivity extends AppCompatActivity {
                                     Map<String, Object> userMap = new HashMap<>();
 
                                     userMap.put("phone", user.getPhoneNumber());
-                                    userMap.put("name", user.getDisplayName());
+                                    userMap.put("name", "SAketwa");
                                     userMap.put("age", "22");
                                     userMap.put("gender", "M");
                                     userMap.put("bloodGroup", "O-");
                                     mUserDB.updateChildren(userMap);
+                                    getUserDetails();
                                 }
-                                userIsLoggedIn();
+
                             }
 
                             @Override
@@ -153,6 +155,26 @@ public class MainActivity extends AppCompatActivity {
                 this,
                 mCallbacks);
 
+    }
+    private void getUserDetails() {
+        DatabaseReference mUserDB = FirebaseDatabase.getInstance().getReference().child("user");
+        Query query = mUserDB.orderByChild("phone").equalTo(mPhoneNumber.getText().toString());
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    startActivity(new Intent(getApplicationContext(), StartActivity.class));
+                    finish();
+                }else{
+                    startActivity(new Intent(getApplicationContext(), register.class));
+                    finish();
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
     private void getPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
